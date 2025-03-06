@@ -1,66 +1,34 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Website sàn thương mại điện tử
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 1. Mục tiêu của dự án
+Dự án này nhằm xây dựng một sàn thương mại điện tử cho phép người bán đăng sản phẩm và người mua có thể tìm kiếm, đặt hàng và thanh toán trực tuyến một cách thuận tiện. Hệ thống cung cấp các tính năng quản lý đơn hàng, giỏ hàng và thanh toán an toàn.
 
-## About Laravel
+## 2. Các chức năng chính
+- **Người dùng:** Đăng ký, đăng nhập, cập nhật thông tin cá nhân.
+- **Người mua:** Tìm kiếm sản phẩm, thêm vào giỏ hàng, đặt hàng và thanh toán.
+- **Người bán:** Đăng sản phẩm, quản lý đơn hàng, theo dõi doanh thu.
+- **Quản trị viên:** Quản lý người dùng, sản phẩm, đơn hàng và doanh thu toàn hệ thống.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 3. Sơ đồ Use Case
+![Use Case Diagram](./public/Tra/Images/ecommerce-usecase.png)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Mô tả sơ đồ Use Case
+Sơ đồ Use Case mô tả các tác nhân và cách họ tương tác với hệ thống:
+- **Khách hàng** có thể đăng ký, đăng nhập, duyệt sản phẩm, thêm vào giỏ hàng, đặt hàng, thanh toán và theo dõi đơn hàng.
+- **Quản trị viên** có thể quản lý sản phẩm và quản lý đơn hàng.
+- **Hệ thống Thanh toán** xử lý giao dịch khi khách hàng thực hiện thanh toán.
+- **Quy trình thanh toán:** Khi khách hàng đặt hàng, hệ thống gửi yêu cầu thanh toán và hệ thống thanh toán xử lý giao dịch.
+## 4. Sơ đồ Class Diagram
+![Class Diagram](./public/Tra/Images/ecommerce-class.png)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Mô tả sơ đồ Class Diagram
+- **User**: Lưu trữ thông tin người dùng, bao gồm khách hàng và quản trị viên.
+- **Category**: Danh mục sản phẩm giúp phân loại sản phẩm.
+- **Product**: Chứa thông tin sản phẩm như tên, mô tả, giá cả, số lượng tồn kho và ảnh.
+- **Cart**: Giỏ hàng của người dùng, liên kết với sản phẩm và số lượng tương ứng.
+- **Order**: Thể hiện một đơn hàng, lưu trạng thái đơn hàng và tổng giá trị.
+- **OrderDetail**: Chi tiết từng sản phẩm trong đơn hàng.
+- **Payment**: Lưu thông tin thanh toán, bao gồm phương thức thanh toán và trạng thái thanh toán.
+- **Review**: Đánh giá của người dùng về sản phẩm, bao gồm xếp hạng và bình luận.
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Hệ thống này áp dụng mô hình **MVC (Model-View-Controller)** để quản lý dữ liệu và logic một cách hiệu quả.
